@@ -1,0 +1,1 @@
+export { AnimeGrid } from './AnimeGrid';
