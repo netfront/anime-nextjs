@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 text-center text-sm">
         Data provided by{' '}
         <span
-          className="text-blue-400 cursor-pointer"
+          className="text-blue-900 cursor-pointer"
           onClick={() => window.open('https://anilist.co', '_blank')}
         >
           AniList

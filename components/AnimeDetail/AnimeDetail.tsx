@@ -37,8 +37,15 @@ export function AnimeDetail({ anime }: IAnimeDetailProps) {
           </div>
 
           <div className="flex-1">
-            <div className="text-3xl font-bold text-gray-900 mb-2">
-              {title}
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-3xl font-bold text-gray-900">
+                {title}
+              </h4>
+              <button className="p-2 rounded-full hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </button>
             </div>
 
             {anime.title.native && (
@@ -60,36 +67,36 @@ export function AnimeDetail({ anime }: IAnimeDetailProps) {
 
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div>
-                <span className="text-gray-400 text-sm">Score</span>
+                <span className="text-gray-300 text-sm">Score</span>
                 <div className="mt-1">
                   <ScoreBadge score={anime.averageScore} />
                 </div>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Format</span>
+                <span className="text-gray-300 text-sm">Format</span>
                 <div className="text-gray-900 mt-1">{anime.format || 'N/A'}</div>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Episodes</span>
+                <span className="text-gray-300 text-sm">Episodes</span>
                 <div className="text-gray-900 mt-1">{anime.episodes || 'N/A'}</div>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Duration</span>
+                <span className="text-gray-300 text-sm">Duration</span>
                 <div className="text-gray-900 mt-1">
                   {anime.duration ? `${anime.duration} min` : 'N/A'}
                 </div>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Status</span>
+                <span className="text-gray-300 text-sm">Status</span>
                 <div className="text-gray-900 mt-1">{formatStatus(anime.status)}</div>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Season</span>
+                <span className="text-gray-300 text-sm">Season</span>
                 <div className="text-gray-900 mt-1">
                   {anime.season && anime.seasonYear
                     ? `${anime.season} ${anime.seasonYear}`
@@ -99,13 +106,13 @@ export function AnimeDetail({ anime }: IAnimeDetailProps) {
 
               {studio && (
                 <div>
-                  <span className="text-gray-400 text-sm">Studio</span>
+                  <span className="text-gray-300 text-sm">Studio</span>
                   <div className="text-gray-900 mt-1">{studio}</div>
                 </div>
               )}
 
               <div>
-                <span className="text-gray-400 text-sm">Popularity</span>
+                <span className="text-gray-300 text-sm">Popularity</span>
                 <div className="text-gray-900 mt-1">
                   {anime.popularity?.toLocaleString() || 'N/A'}
                 </div>
@@ -114,7 +121,7 @@ export function AnimeDetail({ anime }: IAnimeDetailProps) {
 
             {anime.description && (
               <div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Synopsis</div>
+                <h2 className="text-lg font-semibold text-gray-900 mb-2">Synopsis</h2>
                 <div className="text-gray-700 leading-relaxed">
                   {anime.description}
                 </div>
